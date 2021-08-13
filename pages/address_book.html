@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
         rel="stylesheet">
     <title>Address Book Form</title>
 </head>
+
 <body>
     <header class="header-content header">
         <div class="logo-content">
@@ -21,7 +23,7 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
             <div class="form-head-content">
                 <div class="form-head">Person Address Form</div>
                 <div class="form-logo-content">
@@ -79,9 +81,15 @@
                 <label class="label text" for="email">Email</label>
                 <input class="input" type="text" name="Email" id="email" required>
                 <error-output class="email-error" for="text"></error-output>
+                `
+            </div>
+            <div class="submit-reset">
+                <button type="submit" class="button submitButton" id="submitButton">Add</button>
+                <button type="reset" class="resetButton button">Reset</button>
             </div>
         </form>
     </div>
     <script src="../js/address_book_form.js"></script>
 </body>
+
 </html>
