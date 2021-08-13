@@ -28,9 +28,10 @@
             <div class="form-head-content">
                 <div class="form-head">Person Address Form</div>
                 <div class="form-logo-content">
-                    <a href="./home.html"><img src="../assets/images/cancel.jpeg" style="height: 46px;"></a>
+                    <a href="./homepage.html"><img src="../assets/images/cancel.jpeg" style="height: 46px;"></a>
                 </div>
             </div>
+            <!-- input fields like Name, Address, city,state,zip code, email id -->
             <div class="row-content">
                 <label class="label text" for="name">Full Name</label>
                 <div class="row-input">
@@ -82,15 +83,17 @@
                 <label class="label text" for="email">Email</label>
                 <input class="input" type="text" name="Email" id="email" required>
                 <error-output class="email-error" for="text"></error-output>
+                `
             </div>
+            <!-- Add and reset button -->
             <div class="submit-reset">
                 <button type="submit" class="button submitButton" id="submitButton">Add</button>
-                <button type="reset" class="resetButton button">Reset</button>
+                <button type="button" onclick="resetForm()" class="resetButton button">Reset</button>
             </div>
         </form>
     </div>
-    <script src="../js/address_book_form.js"></script>
     <script src="../js/address_book.js"></script>
+    <script src="../js/address_book_form.js"></script>
 </body>
 
 </html>
