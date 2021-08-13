@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const emailError = document.querySelector('.email-error');
     emailElement.addEventListener('input', function () {
         let email = document.querySelector('#email').value;
-        let emailRegex = RegExp("^[0-9a-zA-Z]+([.,+,_,-]{1}[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2})?");
+        let emailRegex = RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
         if (emailRegex.test(email))
             emailError.textContent = "";
         else
@@ -74,7 +74,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 const save = (event) => {
     event.preventDefault();
-    alert("Details submitted successfully");
+    let contactData = createContact();
+    let jsonObject = JSON.stringify(contactData);
+    alert(jsonObject);
+}
+
+const createContact = () => {
+    let contactData = new Contact();
+    let names = getInputValueById('#name').split(" ");
+    contactData.firstName = names[0];
+    contactData.lastName = names[1];
+    contactData.address = getInputValueById('#address');
+    contactData.city = getInputValueById('#city');
+    contactData.state = getInputValueById('#state');
+    contactData.zip = getInputValueById('#zip');
+    contactData.phone = getInputValueById('#phone');
+    contactData.email = getInputValueById('#email');
+    return contactData;
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
 }
 
 const resetForm = () => {
