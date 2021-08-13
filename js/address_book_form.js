@@ -63,10 +63,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const emailError = document.querySelector('.email-error');
     emailElement.addEventListener('input', function () {
         let email = document.querySelector('#email').value;
-        let emailRegex = RegExp('[a-zA-z0-9]+[a-zA-Z0-9-_[+]?]*[.]?[a-zA-Z0-9-_[+]?]+@[a-zA-Z0-9]+([.][a-zA-Z]{2,}){1,2}');
+        let emailRegex = RegExp("^[0-9a-zA-Z]+([.,+,_,-]{1}[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2})?");
         if (emailRegex.test(email))
             emailError.textContent = "";
         else
             emailError.textContent = "Email Invalid";
+
     });
 });
+
+const save = (event) => {
+    event.preventDefault();
+    alert("Details submitted successfully");
+}
+
+const resetForm = () => {
+
+}
